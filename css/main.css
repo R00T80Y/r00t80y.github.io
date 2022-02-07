@@ -1,22 +1,17 @@
-.hidden-accessibly {
+.menu-button {
   margin: 0;
   padding: 0;
-
   position: absolute;
   width: 1em;
   height: 1em;
-
   text-indent: -9999px;
-
-  appearance: initial;
+  -webkit-appearance: initial;
+     -moz-appearance: initial;
+          appearance: initial;
   visibility: hidden;
   overflow: hidden;
-}
-
-.menu-button {
   width: 34px;
   height: 26px;
-
   cursor: pointer;
 }
 
@@ -28,5 +23,6 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat;
   background-image: url(/images/menu-burger-icon--lines.svg);
 }
