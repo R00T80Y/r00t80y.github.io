@@ -7,13 +7,27 @@
   <title>It's not a bug - it's an undocumented feature.</title>
   <style>
   body {
-    background: #888;
+    margin: 40px 20px;
+    outline: 2px dashed rgba(255, 255, 255, 0.1);
+    background-color:  #e1e1e1;
+    background: #444;
   }
   </style>
   <link rel="stylesheet" href="/css/main.css">
 </head><body>
 
-  <input class="menu-button hidden-accessibly" type="checkbox"/>
+  <input role="button" aria-pressed="false" aria-label="Открыть или закрыть" class="button-emulated button-emulated--button-burger" type="checkbox" id="burger-toggle" name="burger-toggle"/>
+  <br>
+  <label role="button" aria-pressed="false" aria-label="Открыть или закрыть" class="button-emulated button-emulated--button" for="burger-toggle" tabindex="0">
+    Открыть/закрыть
+  </label>
+
+  <div class="box"></div>
+
+  <p>
+    <b>aria-expanded</b>
+    Если кнопка управляет группой других элементов, aria-expanded состояние указывает, развернута или свернута управляемая группа в данный момент.
+  </p>
 
 <script src="/js/index.js"></script>
 </body></html>
