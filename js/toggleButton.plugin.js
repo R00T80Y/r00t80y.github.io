@@ -10,6 +10,12 @@
 
 // Вынести этот код в utils.js
 const Utils = {
+  uniqId() {
+    let date = (Date.now()).toString(36)
+    let number = (Math.random()).toString(36).substr(2)
+    return date + number
+  },
+
   type(data) {
     return Object.prototype.toString.call(data).replace(/^\[object (.+)\]$/, '$1').toLowerCase();
   },
@@ -27,8 +33,22 @@ const Utils = {
     // // or in modern browsers you could use matches()
     // if (el.matches('[type="checkbox"]') {}
 
+  },
+  createCheckbox(id, name) {
+    var checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+    checkbox.value = "";
+    if (id) {
+      checkbox.id = id;
+    }
+    if (name) {
+      checkbox.name = name;
+    }
+    return document.body.insertAdjacentElement('afterbegin', checkbox);
   }
+
 }
+
 // export default Utils;
 
 const defaultOptions = {
@@ -44,79 +64,94 @@ const defaultOptions = {
   // https://developer-mozilla-org.translate.goog/en-US/docs/Web/Accessibility/ARIA/Roles/button_role?_x_tr_sl=auto&_x_tr_tl=ru&_x_tr_hl=ru
 
   // Hooks
-  beforeInit: false,
-  afterInit: false,
-
-  beforeDestroy: false,
-  afterDestroy: false,
-
-  beforeChange: false,
-  afterChange: false,
+  init: false,
+  destroy: false,
+  change: false,
 };
 
 function Plugin($rootElement, pluginOptions) {
-  Utils.type(pluginOptions.beforeInit) === 'function' && pluginOptions.beforeInit();
 
-  // Флажок для которого вызван плагин
-  const IS_CHECKBOX = Utils.isCheckbox($rootElement);
+  // id флажка
+  let checkboxName = '';
 
+  // Ссылка на флажок
+  let $checkbox = undefined;
 
-  //
-  const checkboxName = $rootElement.name || $rootElement.id;
+  // Элементы связанные с флажком
+  let $relatedItems = undefined;
 
-  // Метки связанные с текущим флажком
-  const $labels = document.querySelectorAll('[for="' + checkboxName + '"]');
+  // Если не заданы атрибуты role
+  if (!$rootElement.getAttribute('role')) {
+    $rootElement.setAttribute('role', 'button');
+  }
 
+  // Если не заданы атрибуты tabindex
+  if (!$rootElement.getAttribute('tabindex')) {
+    $rootElement.setAttribute('tabindex', '0');
+  }
 
-  //
+  // Если не заданы атрибуты aria-pressed или aria-expanded
+  if (!$rootElement.getAttribute('aria-pressed') && !$rootElement.getAttribute('aria-expanded')) {
+    $rootElement.setAttribute('aria-pressed', false);
+  }
+
+  // Если плагин вызван для флажка(<CHECKBOX>)
+  if (Utils.isCheckbox($rootElement)) {
+    checkboxName = $rootElement.id || $rootElement.name;
+    $checkbox = $rootElement;
+    $relatedItems = document.querySelectorAll('[for="' + checkboxName + '"]');
+  } else {
+    // Если плагин вызван для элемента с атрибутом for например для метки(<LABEL>)
+    if ($rootElement.getAttribute('for')) {
+      checkboxName = $rootElement.getAttribute('for');
+      $checkbox = document.getElementById(checkboxName);
+
+      // Если не найден флажок по атрибуту for
+      if (!$checkbox) {
+        $checkbox = Utils.createCheckbox(checkboxName, checkboxName);
+      }
+
+      $relatedItems = [$rootElement];
+    } else {
+      checkboxName = Utils.uniqId();
+      $checkbox = Utils.createCheckbox(checkboxName, checkboxName);
+      $relatedItems = [$rootElement];
+    }
+
+    // Проверяем есть ли на флажках атрибут aria-pressed или aria-expanded
+    if (!$checkbox.getAttribute('aria-pressed')) {
+      $checkbox.setAttribute('aria-pressed', $rootElement.getAttribute('aria-pressed'));
+    } else if (!$checkbox.getAttribute('aria-expanded')) {
+      $checkbox.setAttribute('aria-expanded', $rootElement.getAttribute('aria-expanded'));
+    }
+
+  }
+
+  // Добавляем события
   addEvents();
 
-  //
-  $rootElement.dispatchEvent(new Event('change'));
+  // Вызываем событие change для флажков
+  $checkbox.dispatchEvent(new Event('change'));
 
-  //
-  Utils.type(pluginOptions.afterInit) === 'function' && pluginOptions.afterInit();
+  // Хук init
+  Utils.type(pluginOptions.init) === 'function' && pluginOptions.init();
 
-  function getState() {
-    let state = {};
-
-    state.checked = null;
-
-    if (IS_CHECKBOX) {
-      state.checked = $rootElement.checked;
-    }
-
-    if ($rootElement.getAttribute('aria-pressed')) {
-      state.name = 'aria-pressed';
-    } else if ($rootElement.getAttribute('aria-expanded')) {
-      state.name = 'aria-expanded';
-    } else {
-      return false;
-    }
-
-    state.value = JSON.parse($rootElement.getAttribute(state.name));
-
-    return state;
-  }
-
+  // Изменяет состояние флажка на противоположное
   function toggleState() {
-    const state = getState($rootElement);
-
-    if (IS_CHECKBOX) {
-      $rootElement.checked = !$rootElement.checked;
-      $rootElement.dispatchEvent(new Event('change'));
-    } else {
-      changeState($rootElement, !state.value);
-      $rootElement.dispatchEvent(new CustomEvent('change'));
-    }
+    $checkbox.checked = !$checkbox.checked;
+    $checkbox.dispatchEvent(new Event('change'));
   }
 
-  function changeState($element, value) {
+  // Событие: cостояние флажка изменилось
+  function onCheckboxChange(event) {
+
+    const $target = event.target;
+
     let ariaAttributeName = false;
 
-    if ($element.getAttribute('aria-pressed')) {
+    if ($target.getAttribute('aria-pressed')) {
       ariaAttributeName = 'aria-pressed';
-    } else if ($element.getAttribute('aria-expanded')) {
+    } else if ($target.getAttribute('aria-expanded')) {
       ariaAttributeName = 'aria-expanded';
     }
 
@@ -124,116 +159,82 @@ function Plugin($rootElement, pluginOptions) {
     // Если он был задан в HTML
     if (ariaAttributeName) {
       // Задаем состояние кнопки взависимости от состояния флажка
-      $element.setAttribute(ariaAttributeName, value);
+      $target.setAttribute(ariaAttributeName, $target.checked);
 
       // Задаем aria атрибут всем меткам(<label>) соединенные с текущим (<checkbox>)
-      if ($labels && $labels.length) {
-        for (let i = 0, l = $labels.length; i < l; ++i) {
-          $labels[i].setAttribute(ariaAttributeName, value);
+      if (typeof $relatedItems !== 'undefined' && $relatedItems.length) {
+        for (let i = 0, l = $relatedItems.length; i < l; ++i) {
+          $relatedItems[i].setAttribute(ariaAttributeName, $target.checked);
         }
       }
     }
 
+    // Хук change
+    Utils.type(pluginOptions.change) === 'function' && pluginOptions.change();
+
   }
 
-  // Состояние флажка(<checkbox>) изменилось
-  function onChange(event) {
-
-    const $target = event.target;
-    const state = getState($target);
-
-    Utils.type(pluginOptions.beforeChange) === 'function' && pluginOptions.beforeChange();
-
-    if (state) {
-      if (IS_CHECKBOX) {
-        changeState($target, state.checked);
-      }
+  // Обработка клавиш при фокусе на флажке
+  function onCheckboxKeyDown(event) {
+    switch (event.keyCode) {
+      case 13: // Кнопка <ENTER>
+        event.preventDefault() && event.stopPropagation();
+        toggleState();
+        break;
+      default:
+        break;
     }
-
-    Utils.type(pluginOptions.afterChange) === 'function' && pluginOptions.afterChange();
-
   }
 
-  // Отменяет переключение фокуса на флажку при клике на метку
+  // Отменяет переключение фокуса на флажок при клике на метку
   // Переключение фокуса произходит если флажку не задать display: none;
-  function onMouseClickLabels(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-
+  function onButtonClick(event) {
+    event.preventDefault() && event.stopPropagation();
     toggleState();
     return false;
   }
 
-  // Обработка клавиш при фокусе на флажке
-  function onKeyDown(event) {
-    switch (event.keyCode) {
-      case 13: // Кнопка <ENTER>
-        event.preventDefault();
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-
-        toggleState();
-        break;
-      default:
-        break;
-    }
-  }
-
   // Обработка клавиш при фокусе на метке
-  function onKeyDownLabels(event) {
+  function onButtonKeyDown(event) {
     switch (event.keyCode) {
       case 13: // Кнопка <ENTER>
       case 32: // Кнопка <SPACE>
-        event.preventDefault();
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-
+        event.preventDefault() && event.stopPropagation();
         toggleState();
         break;
       default:
-        console.log('Key Press:', event.keyCode);
         break;
     }
   }
 
   function addEvents() {
-    if (IS_CHECKBOX) {
-      $rootElement.addEventListener('change', onChange);
-      $rootElement.addEventListener('keydown', onKeyDown);
-      if ($labels && $labels.length) {
-        for (let i = 0, l = $labels.length; i < l; ++i) {
-          $labels[i].addEventListener('click', onMouseClickLabels);
-          $labels[i].addEventListener('keydown', onKeyDownLabels);
-        }
+    $checkbox.addEventListener('change', onCheckboxChange);
+    $checkbox.addEventListener('keydown', onCheckboxKeyDown);
+
+    if (typeof $relatedItems !== 'undefined' && $relatedItems.length) {
+      for (let i = 0, l = $relatedItems.length; i < l; ++i) {
+        $relatedItems[i].addEventListener('click', onButtonClick);
+        $relatedItems[i].addEventListener('keydown', onButtonKeyDown);
       }
-    } else {
-      $rootElement.addEventListener('keydown', onKeyDownLabels);
-      $rootElement.addEventListener('click', onMouseClickLabels);
     }
   }
 
   function removeEvents() {
-    $rootElement.removeEventListener('change', onChange);
-    if (IS_CHECKBOX) {
-      $rootElement.removeEventListener('keydown', onKeyDown);
-      if ($labels && $labels.length) {
-        for (let i = 0, l = $labels.length; i < l; ++i) {
-          $labels[i].removeEventListener('click', onMouseClickLabels);
-          $labels[i].removeEventListener('keydown', onKeyDownLabels);
-        }
+    $checkbox.removeEventListener('change', onCheckboxChange);
+    $checkbox.removeEventListener('keydown', onCheckboxKeyDown);
+
+    if (typeof $relatedItems !== 'undefined' && $relatedItems.length) {
+      for (let i = 0, l = $relatedItems.length; i < l; ++i) {
+        $relatedItems[i].removeEventListener('click', onButtonClick);
+        $relatedItems[i].removeEventListener('keydown', onButtonKeyDown);
       }
-    } else {
-      $rootElement.removeEventListener('keydown', onKeyDownLabels);
-      $rootElement.removeEventListener('click', onMouseClickLabels);
     }
   }
 
   // Public method for destroying a plugin
   function destroy() {
-    Utils.type(pluginOptions.beforeDestroy) === 'function' && pluginOptions.beforeDestroy();
     removeEvents();
-    Utils.type(pluginOptions.afterDestroy) === 'function' && pluginOptions.afterDestroy();
+    Utils.type(pluginOptions.destroy) === 'function' && pluginOptions.destroy();
     return true;
   }
 
