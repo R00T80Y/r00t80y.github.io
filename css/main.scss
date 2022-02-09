@@ -84,6 +84,10 @@
   background-color:rgba(0, 255, 0, 0.3);
 }
 
+.main:checked ~ .wrap h3 {
+  color: rgba(0, 255, 0, 0.2);
+}
+
 $defaultAccent: #80CBC4;
 $background: #0F111A;
 $backgroundAlt: #0F111A;
