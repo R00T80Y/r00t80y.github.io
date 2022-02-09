@@ -242,8 +242,8 @@ function Plugin($rootElement, pluginOptions) {
 
   return {
     // Public methods
-    get pluginOptions() { return pluginOptions; },
-    destroy,
+//     get pluginOptions() { return pluginOptions; },
+//     destroy,
   }
 }
 
