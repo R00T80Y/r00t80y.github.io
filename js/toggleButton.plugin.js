@@ -10,18 +10,18 @@
 
 // Вынести этот код в utils.js
 const Utils = {
-  uniqId() {
+  uniqId: function() {
     let date = (Date.now()).toString(36)
     let number = (Math.random()).toString(36).substr(2)
     return date + number
   },
 
-  type(data) {
+  type: function(data) {
     return Object.prototype.toString.call(data).replace(/^\[object (.+)\]$/, '$1').toLowerCase();
   },
 
   // DOM
-  isCheckbox(element) {
+  isCheckbox: function(element) {
     return element instanceof HTMLInputElement
       && element.getAttribute('type') == 'checkbox';
 
@@ -34,7 +34,7 @@ const Utils = {
     // if (el.matches('[type="checkbox"]') {}
 
   },
-  createCheckbox(id, name) {
+  createCheckbox: function(id, name) {
     var checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.value = "";
