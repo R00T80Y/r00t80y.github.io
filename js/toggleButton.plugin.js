@@ -271,9 +271,11 @@ function ToggleButton(element, customOptions) {
     }
 
     for (let i = 0, l = nodeList.length; i < l; ++i) {
-      instances.push(Plugin(nodeList[i], Object.assign({}, defaultOptions, customOptions, {
-        name: 'ToggleButton'
-      })));
+      instances.push(Plugin(nodeList[i], defaultOptions));
+      // не пашет Object.assign
+//       instances.push(Plugin(nodeList[i], Object.assign({}, defaultOptions, customOptions, {
+//         name: 'ToggleButton'
+//       })));
     }
 
     return instances;
