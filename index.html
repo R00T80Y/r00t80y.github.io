@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>It's not a bug - it's an undocumented feature.</title>
   <style>
+  html { height: 100%; }
   body {
     margin: 40px 20px;
     outline: 2px dashed rgba(128, 203, 196, 0.4);
@@ -17,27 +18,25 @@
   <link rel="stylesheet" href="/css/main.css">
 </head><body>
 
-  <input type="checkbox" aria-pressed="false" id="burger-toggle-new" name="burger-toggle-new"/>
-  <br>
+  <h3>Пример 1</h3>
   <input role="button" aria-pressed="false" aria-label="Открыть или закрыть" class="js-button-emulated button-emulated button-emulated--button-burger" type="checkbox" name="burger-toggle"/>
   <br>
+  <div>
   <label role="button" aria-pressed="false" aria-label="Открыть или закрыть" class="button-emulated button-emulated--button" for="burger-toggle" tabindex="0">
     Открыть/закрыть
   </label>
-  <br>
+  </div>
+  <div class="box"></div>
+
+  <h3>Пример 2</h3>
+  <input type="checkbox" aria-pressed="false" id="burger-toggle-new" name="burger-toggle-new"/>
   <label role="button" aria-pressed="false" aria-label="Открыть или закрыть" class="js-button-emulated button-emulated button-emulated--button" for="burger-toggle-new" tabindex="0">
     Открыть/закрыть
   </label>
 
-  <div class="box"></div>
-
+  <h3>Пример 3</h3>
   <div class="js-button-emulated button-emulated button-emulated--button">Save</div>
 
-
-  <p>
-    <b>aria-expanded</b>
-    Если кнопка управляет группой других элементов, aria-expanded состояние указывает, развернута или свернута управляемая группа в данный момент.
-  </p>
 
 <script src="/js/toggleButton.plugin.js"></script>
 <script src="/js/index.js"></script>

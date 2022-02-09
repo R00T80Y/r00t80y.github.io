@@ -44,7 +44,7 @@ const Utils = {
     if (name) {
       checkbox.name = name;
     }
-    return document.body.insertAdjacentElement('afterbegin', checkbox);
+    return checkbox;
   }
 
 }
@@ -109,12 +109,14 @@ function Plugin($rootElement, pluginOptions) {
       // Если не найден флажок по атрибуту for
       if (!$checkbox) {
         $checkbox = Utils.createCheckbox(checkboxName, checkboxName);
+        $rootElement.insertAdjacentElement('beforebegin', $checkbox);
       }
 
       $relatedItems = [$rootElement];
     } else {
       checkboxName = Utils.uniqId();
       $checkbox = Utils.createCheckbox(checkboxName, checkboxName);
+      $rootElement.insertAdjacentElement('beforebegin', $checkbox);
       $relatedItems = [$rootElement];
     }
 
