@@ -1,0 +1,39 @@
+#search-checkbox:checked ~ .header-search {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.header-search {
+  position: absolute;
+  z-index: 1;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  width: 100%;
+  opacity: 0.1;
+  visibility: hidden;
+  -webkit-transform: translateY(-40px);
+      -ms-transform: translateY(-40px);
+          transform: translateY(-40px);
+  -webkit-transition: opacity 250ms ease-out, visibility 0s linear 250ms, -webkit-transform 250ms ease-out;
+  transition: opacity 250ms ease-out, visibility 0s linear 250ms, -webkit-transform 250ms ease-out;
+  -o-transition: transform 250ms ease-out, opacity 250ms ease-out, visibility 0s linear 250ms;
+  transition: transform 250ms ease-out, opacity 250ms ease-out, visibility 0s linear 250ms;
+  transition: transform 250ms ease-out, opacity 250ms ease-out, visibility 0s linear 250ms, -webkit-transform 250ms ease-out;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+.header-search input[type=text] {
+  width: 32vw;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -100vw;
+}

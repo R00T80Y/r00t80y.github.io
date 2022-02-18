@@ -87,96 +87,94 @@
     <main class="page-content js-menu-inert">
       <div class="page-container">
 
-        <section class="section-page section-container">
+        <form class="custom" action="#" enctype="multipart/form-data" method="get" autocomplete="off">
 
-          <h1>
-            How to Use Command Line Arguments in a Bash Script
-          </h1>
-
-          <h2>Third article Как использовать аргументы</h2>
+          <!-- Select -->
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate dolorem nam eveniet <a href="#">pariatur esse</a>, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
+            <label for="country" class="form-title">Страна:</label>
+            <select name="country" id="country">
+              <option value="Выберите страну" selected="selected">Выберите страну</option>
+              <option value="1">Страна 1</option>
+              <option value="2">Страна 2</option>
+              <option value="3">Страна 3</option>
+              <option value="4">Страна 4</option>
+            </select>
           </p>
-          <h1>Third article Как использовать аргументы</h1>
-          <h2>Third article Как использовать аргументы</h2>
-          <h3>Third article Как использовать аргументы</h3>
-          <h4>Third article Как использовать аргументы</h4>
-          <h5>Third article Как использовать аргументы</h5>
-          <h6>Third article Как использовать аргументы</h6>
-          <p class="text-center-sm hide-br-lg">
-            Lorem<br>ipsum,<br>dolor sit amet consectetur adipisicing elit.<br>Voluptate dolorem nam eveniet <a href="#">pariatur esse</a>, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
+          <p>
+            <label for="region" class="form-title">Регион</label>
+            <select name="region" id="region">
+              <option value="Выберите регион" selected="selected">Выберите регион</option>
+              <option value="1">Регион 1</option>
+              <option value="2">Регион 2</option>
+              <option value="3">Регион 3</option>
+              <option value="4">Регион 4</option>
+            </select>
           </p>
 
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-          <ul>
-            <li>
-              Чебурашка
-              <ul>
-              <li>Чебурашка</li>
-              <li>Крокодил Гена</li>
-              <li>Шапокляк</li>
+          <!-- Radio button -->
+          <fieldset>
+            <legend class="require">Выберите фрукт:</legend>
+            <ul>
+              <li>
+                <input type="radio" id="test1" name="radio-group" checked>
+                <label for="test1">Apple</label>
+              </li>
+              <li>
+                <input type="radio" id="test2" name="radio-group">
+                <label for="test2">Peach</label>
+              </li>
+              <li>
+                <input type="radio" id="test4" name="radio-group" disabled>
+                <label for="test4">Orange Disabled</label>
+              </li>
             </ul>
-            </li>
-            <li>Крокодил Гена</li>
-            <li>Шапокляк</li>
-          </ul>
-          <dl>
-            <dt>Beast of Bodmin</dt>
-            <dd>A large feline inhabiting Bodmin Moor.</dd>
+          </fieldset>
 
-            <dt>Morgawr</dt>
-            <dd>A sea serpent.</dd>
+          <!-- Checkbox -->
+          <fieldset>
+            <legend>Выберите фрукты:</legend>
+            <ul>
+              <li>
+                <input type="checkbox" id="test11" name="test11" checked>
+                <label for="test11">Apple</label>
+              </li>
+              <li>
+                <input type="checkbox" id="test12" name="test12">
+                <label for="test12">Peach</label>
+              </li>
+              <li>
+                <input type="checkbox" id="test13" name="test13" disabled>
+                <label for="test13">Orange Disabled</label>
+              </li>
+            </ul>
+          </fieldset>
 
-            <dt>Owlman</dt>
-            <dd>A giant owl-like creature.</dd>
-          </dl>
-          <p>
-            “It's not a bug - it's an undocumented feature.“ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate dolorem nam eveniet pariatur esse, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
-          </p>
-          <hr>
-          <p>
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit". Voluptate dolorem nam eveniet pariatur esse, dolorum hic quo, <a href="#">veritatis sit amet numquam</a>, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
+          <!-- Other -->
+          <p class="hidden">
+            <input type="button">
+            <input type="checkbox">
+            <input type="color">
+            <input type="date">
+            <input type="datetime-local">
+            <input type="email">
+            <input type="file">
+            <input type="hidden">
+            <input type="image">
+            <input type="month">
+            <input type="number">
+            <input type="password">
+            <input type="range">
+            <input type="reset">
+            <input type="search">
+            <input type="submit">
+            <input type="tel">
+            <input type="text">
+            <input type="time">
+            <input type="url">
+            <input type="week">
           </p>
 
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate dolorem nam eveniet <a href="#">pariatur esse</a>, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
-          </p>
-          <p>
-            “It's not a bug - it's an undocumented feature.“ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate dolorem nam eveniet pariatur esse, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
-          </p>
-          <p>
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit". Voluptate dolorem nam eveniet pariatur esse, dolorum hic quo, <a href="#">veritatis sit amet numquam</a>, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
-          </p>
-        </section>
+        </form>
 
       </div>
     </main>
@@ -184,21 +182,16 @@
   <div class="site__footer js-menu-inert">
     <footer class="page-footer">
       <div class="page-container">
-
-        <nav>
-          <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="/blocks.html">Блоки</a></li>
-            <li><a href="/forms.html">Формы</a></li>
-            <li><a href="/debug.html">Отладка</a></li>
-          </ul>
-        </nav>
-
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/blocks.html">Блоки</a></li>
+          <li><a href="/forms.html">Формы</a></li>
+          <li><a href="/debug.html">Отладка</a></li>
+        </ul>
         <ul>
           <li><a href="tel:+74951001010">+7 (495) 100 1010</a></li>
           <li><a href="mailto:mail@mail.org?subject=subject&body=text&cc=admin@mail.ru">admin@mail.ru</a></li>
         </ul>
-
       </div>
     </footer>
   </div>

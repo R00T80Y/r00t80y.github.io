@@ -87,118 +87,72 @@
     <main class="page-content js-menu-inert">
       <div class="page-container">
 
-        <section class="section-page section-container">
+        <h1>Структура форм</h1>
+        <p>
+          p > label<br>
+          fieldset > legend<br>
+          <a href="form.other.html">Select, checkbox, radio button</a>
+        </p>
 
-          <h1>
-            How to Use Command Line Arguments in a Bash Script
-          </h1>
+        <form class="custom" action="#" enctype="multipart/form-data" method="get" autocomplete="off">
 
-          <h2>Third article Как использовать аргументы</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate dolorem nam eveniet <a href="#">pariatur esse</a>, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
-          </p>
-          <h1>Third article Как использовать аргументы</h1>
-          <h2>Third article Как использовать аргументы</h2>
-          <h3>Third article Как использовать аргументы</h3>
-          <h4>Third article Как использовать аргументы</h4>
-          <h5>Third article Как использовать аргументы</h5>
-          <h6>Third article Как использовать аргументы</h6>
-          <p class="text-center-sm hide-br-lg">
-            Lorem<br>ipsum,<br>dolor sit amet consectetur adipisicing elit.<br>Voluptate dolorem nam eveniet <a href="#">pariatur esse</a>, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
-          </p>
-
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-          <ul>
-            <li>
-              Чебурашка
-              <ul>
-              <li>Чебурашка</li>
-              <li>Крокодил Гена</li>
-              <li>Шапокляк</li>
-            </ul>
-            </li>
-            <li>Крокодил Гена</li>
-            <li>Шапокляк</li>
-          </ul>
-          <dl>
-            <dt>Beast of Bodmin</dt>
-            <dd>A large feline inhabiting Bodmin Moor.</dd>
-
-            <dt>Morgawr</dt>
-            <dd>A sea serpent.</dd>
-
-            <dt>Owlman</dt>
-            <dd>A giant owl-like creature.</dd>
-          </dl>
-          <p>
-            “It's not a bug - it's an undocumented feature.“ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate dolorem nam eveniet pariatur esse, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
-          </p>
-          <hr>
-          <p>
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit". Voluptate dolorem nam eveniet pariatur esse, dolorum hic quo, <a href="#">veritatis sit amet numquam</a>, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
+            <label for="fname" class="require">Имя:</label>
+            <br>
+            <input type="text" id="fname" name="fname" value="John">
           </p>
 
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate dolorem nam eveniet <a href="#">pariatur esse</a>, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
+            <label for="lname" class="require">Фамилия:</label>
+            <br>
+            <input type="text" id="lname" name="lname" value="Doe">
           </p>
-          <p>
-            “It's not a bug - it's an undocumented feature.“ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate dolorem nam eveniet pariatur esse, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
-          </p>
-          <p>
-            "Lorem ipsum, dolor sit amet consectetur adipisicing elit". Voluptate dolorem nam eveniet pariatur esse, dolorum hic quo, <a href="#">veritatis sit amet numquam</a>, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
-          </p>
-        </section>
 
+          <p>
+            <label for="msg">Сообщение:</label>
+            <br>
+            <textarea rows="7" id="msg" name="msg" ></textarea>
+          </p>
+
+          <p>
+            <input type="submit" value="ОТПРАВИТЬ">
+            <input type="submit" disabled value="Отправить">
+            <input type="reset" value="Сбросить">
+            <button>Кнопка</button>
+            <a class="button" tabindex="0">Кнопка ссылка</a>
+            <a class="button disabled">Кнопка ссылка</a>
+          </p>
+
+          <p class="hidden">
+            <!-- Кнопка с svg иконкой для программ чтения -->
+            <button>
+              <svg viewBox="0 0 32 32" width="32px" height="32px"
+                    aria-hidden="true" focusable="false">
+                <!-- svg иконка -->
+                <rect x="0" y="0" width="32" height="32"
+                fill="purple" fill-opacity="0.5"/>
+              </svg>
+              <span class="visually-hidden">Главное меню</span>
+            </button>
+          </p>
+
+        </form>
       </div>
     </main>
   </div>
   <div class="site__footer js-menu-inert">
     <footer class="page-footer">
       <div class="page-container">
-
-        <nav>
-          <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="/blocks.html">Блоки</a></li>
-            <li><a href="/forms.html">Формы</a></li>
-            <li><a href="/debug.html">Отладка</a></li>
-          </ul>
-        </nav>
-
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/blocks.html">Блоки</a></li>
+          <li><a href="/forms.html">Формы</a></li>
+          <li><a href="/debug.html">Отладка</a></li>
+        </ul>
         <ul>
           <li><a href="tel:+74951001010">+7 (495) 100 1010</a></li>
           <li><a href="mailto:mail@mail.org?subject=subject&body=text&cc=admin@mail.ru">admin@mail.ru</a></li>
         </ul>
-
       </div>
     </footer>
   </div>
