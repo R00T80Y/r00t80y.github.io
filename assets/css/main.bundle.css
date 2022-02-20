@@ -323,7 +323,6 @@ body.js-resize-animation-stopper * {
   -webkit-animation: none !important;
           animation: none !important;
   -webkit-transition: none !important;
-  -o-transition: none !important;
   transition: none !important;
 }
 
@@ -904,7 +903,6 @@ a.button,
   will-change: transform;
   -webkit-transition: -webkit-transform 0.15s ease;
   transition: -webkit-transform 0.15s ease;
-  -o-transition: transform 0.15s ease;
   transition: transform 0.15s ease;
   transition: transform 0.15s ease, -webkit-transform 0.15s ease;
   color: #fff;
@@ -928,7 +926,6 @@ a.button:active:not(:disabled),
 .button:active:not(:disabled) {
   color: #fff;
   -webkit-transform: translateY(-1px);
-      -ms-transform: translateY(-1px);
           transform: translateY(-1px);
   border-color: #08cf50;
   background-color: #08cf50;
@@ -1009,13 +1006,11 @@ form.custom [type=radio]:not(:checked) + label:after {
 form.custom [type=radio]:not(:checked) + label:after {
   opacity: 0;
   -webkit-transform: scale(0);
-      -ms-transform: scale(0);
           transform: scale(0);
 }
 form.custom [type=radio]:checked + label:after {
   opacity: 1;
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
 }
 form.custom [type=radio]:disabled + label {
@@ -1029,7 +1024,6 @@ form.custom [type=radio] + label:before {
 form.custom [type=radio] + label:after {
   background: #01ce4b;
   -webkit-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 form.custom [type=radio]:focus + label:before {
@@ -1082,7 +1076,6 @@ form.custom [type=checkbox]:not(:checked) + label:after {
   border-style: solid;
   border-width: 0px 0.2em 0.2em 0px;
   -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 form.custom [type=checkbox]:not(:checked) + label:after {
@@ -1104,7 +1097,6 @@ form.custom [type=checkbox]:checked + label:after,
 form.custom [type=checkbox]:not(:checked) + label:after {
   border-color: #01ce4b;
   -webkit-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 form.custom [type=checkbox]:focus + label:before {
@@ -1366,7 +1358,6 @@ form.custom fieldset {
   visibility: visible;
   opacity: 1;
   -webkit-transform: translateX(0px);
-      -ms-transform: translateX(0px);
           transform: translateX(0px);
 }
 .navigation__panel {
@@ -1379,26 +1370,21 @@ form.custom fieldset {
   opacity: 0;
   -webkit-transition-property: -webkit-transform opacity;
   transition-property: -webkit-transform opacity;
-  -o-transition-property: transform opacity;
   transition-property: transform opacity;
   transition-property: transform opacity, -webkit-transform opacity;
   -webkit-transition-duration: 400ms;
-       -o-transition-duration: 400ms;
           transition-duration: 400ms;
   -webkit-transition-timing-function: ease-in-out;
-       -o-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
 }
 .navigation__panel--left {
   left: 0px;
   -webkit-transform: translateX(-400px);
-      -ms-transform: translateX(-400px);
           transform: translateX(-400px);
 }
 .navigation__panel--right {
   right: 0px;
   -webkit-transform: translateX(400px);
-      -ms-transform: translateX(400px);
           transform: translateX(400px);
 }
 
@@ -1926,10 +1912,8 @@ form.custom textarea {
     background: transparent;
     opacity: 1;
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
     -webkit-transition: none;
-    -o-transition: none;
     transition: none;
   }
   .navigation__list {

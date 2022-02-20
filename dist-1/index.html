@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>It's not a bug - it's an undocumented feature.</title>
+
+<style>
+body {
+  background: #f1f1f1;
+}
+</style>
+
+<style>
+body.js-resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
+*:focus {
+  outline: 2px solid rgba(255, 0, 0, 0.6);
+}
+</style>
+<script>
+let resizeTimer;
+
+window.addEventListener("resize", () => {
+  document.body.classList.add("js-resize-animation-stopper");
+  clearTimeout(resizeTimer);
+
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove("js-resize-animation-stopper");
+  }, 400);
+
+});
+</script>
+
+<link rel="icon" href="favicon.ico"><link href="primary-navigation.css" rel="stylesheet"></head><body>
+
+  <!-- Start: Primary Navigation -->
+  <div id="navigation" class="navigation">
+    <input type="checkbox" id="navigation__state-control" name="navigation__state-control" class="navigation__state-control" checked="false">
+    <script>document.getElementById('navigation__state-control').checked = false;</script>
+    <label class="navigation__button navigation__button--burger" role="button" aria-controls="navigation__panel" aria-expanded="false" aria-label="Открыть меню" for="navigation__state-control" tabindex="0">
+      <span></span>
+    </label>
+    <nav id="navigation__panel" class="navigation__panel navigation__panel--left" data-visible="hidden">
+      <label class="navigation__button navigation__button--close" role="button" aria-controls="navigation__panel" aria-expanded="false" aria-label="Закрыть меню" for="navigation__state-control" tabindex="0">
+        <span></span>
+      </label>
+      <ul class="navigation__list">
+        <li class="navigation__item"><a href="/" class="navigation__link">Link 1</a></li>
+        <li class="navigation__item"><a href="/" class="navigation__link">Link 2</a></li>
+        <li class="navigation__item"><a href="/" class="navigation__link">Link 3</a></li>
+        <li class="navigation__item"><a href="/" class="navigation__link">Link 4</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- End: Primary Navigation -->
+  <div id="navigation-1" class="navigation">
+    <input type="checkbox" id="navigation__state-control-1" name="navigation__state-control-1" class="navigation__state-control" checked="false">
+    <script>document.getElementById('navigation__state-control-1').checked = false;</script>
+    <label class="navigation__button navigation__button--burger" role="button" aria-controls="navigation__panel-1" aria-expanded="false" aria-label="Открыть меню" for="navigation__state-control-1" tabindex="0">
+      <span></span>
+    </label>
+    <nav id="navigation__panel-1" class="navigation__panel navigation__panel--left" data-visible="hidden">
+      <label class="navigation__button navigation__button--close" role="button" aria-controls="navigation__panel-1" aria-expanded="false" aria-label="Закрыть меню" for="navigation__state-control-1" tabindex="0">
+        <span></span>
+      </label>
+      <ul class="navigation__list">
+        <li class="navigation__item"><a href="/" class="navigation__link">Link 5</a></li>
+        <li class="navigation__item"><a href="/" class="navigation__link">Link 6</a></li>
+        <li class="navigation__item"><a href="/" class="navigation__link">Link 7</a></li>
+        <li class="navigation__item"><a href="/" class="navigation__link">Link 8</a></li>
+      </ul>
+    </nav>
+  </div>
+
+<script defer src="PrimaryNavigation.js"></script><script defer src="index.js"></script></body></html>
