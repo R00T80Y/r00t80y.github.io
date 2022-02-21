@@ -8,13 +8,14 @@
 <link rel="icon" href="favicon.ico"></head><body>
   <h1>Open Console Panel</h1>
 <script>
-var objs = [{ Name: "ABC" }, { Roll: 123 }, { NaMe: 777 }],
+var objs = [{ Name: "ABC", func: function() { console.log('Test')} }, { Roll: 123 }, { Name: 777 }],
     result =  objs.reduce(function (r, o) {
         Object.keys(o).forEach(function (k) {
             r[k] = o[k];
         });
         return r;
     }, {});
-
+console.log(objs)
 console.log(result);
+  console.log(result.func());
 </script></body></html>
