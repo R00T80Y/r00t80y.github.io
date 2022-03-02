@@ -24,6 +24,31 @@ function _objectSpread2(target) {
   return target;
 }
 
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", {
+    writable: false
+  });
+  return Constructor;
+}
+
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -39,22 +64,73 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
-/**
- * @author r00t80y<https://github.com/R00T80Y>
- * @file Utils used in plugin
- * @since 09-02-2022
- * @updated 14-02-2022
- * @version 0.2.1
- */
-var Utils = {
-  // Data Type
-  type: function type(data) {
-    return Object.prototype.toString.call(data).replace(/^\[object (.+)\]$/, '$1').toLowerCase();
-  },
-  isFunction: function isFunction(func) {
-    return Utils.type(func) === 'function';
+function _classPrivateFieldGet(receiver, privateMap) {
+  var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "get");
+
+  return _classApplyDescriptorGet(receiver, descriptor);
+}
+
+function _classPrivateFieldSet(receiver, privateMap, value) {
+  var descriptor = _classExtractFieldDescriptor(receiver, privateMap, "set");
+
+  _classApplyDescriptorSet(receiver, descriptor, value);
+
+  return value;
+}
+
+function _classExtractFieldDescriptor(receiver, privateMap, action) {
+  if (!privateMap.has(receiver)) {
+    throw new TypeError("attempted to " + action + " private field on non-instance");
   }
-};
+
+  return privateMap.get(receiver);
+}
+
+function _classApplyDescriptorGet(receiver, descriptor) {
+  if (descriptor.get) {
+    return descriptor.get.call(receiver);
+  }
+
+  return descriptor.value;
+}
+
+function _classApplyDescriptorSet(receiver, descriptor, value) {
+  if (descriptor.set) {
+    descriptor.set.call(receiver, value);
+  } else {
+    if (!descriptor.writable) {
+      throw new TypeError("attempted to set read only private field");
+    }
+
+    descriptor.value = value;
+  }
+}
+
+function _classPrivateMethodGet(receiver, privateSet, fn) {
+  if (!privateSet.has(receiver)) {
+    throw new TypeError("attempted to get private field on non-instance");
+  }
+
+  return fn;
+}
+
+function _checkPrivateRedeclaration(obj, privateCollection) {
+  if (privateCollection.has(obj)) {
+    throw new TypeError("Cannot initialize the same private elements twice on an object");
+  }
+}
+
+function _classPrivateFieldInitSpec(obj, privateMap, value) {
+  _checkPrivateRedeclaration(obj, privateMap);
+
+  privateMap.set(obj, value);
+}
+
+function _classPrivateMethodInitSpec(obj, privateSet) {
+  _checkPrivateRedeclaration(obj, privateSet);
+
+  privateSet.add(obj);
+}
 
 var defaultOptions = {
   // Plugin options here...
@@ -63,65 +139,86 @@ var defaultOptions = {
   destroy: false
 };
 
-function Plugin($rootElement, pluginOptions) {
-  // Plugin methods...
-  // Plugin init...
-  if (Utils.isFunction(pluginOptions.init)) {
-    pluginOptions.init();
-  } // Plugin code here...
+var _$rootElement = /*#__PURE__*/new WeakMap();
 
+var _options = /*#__PURE__*/new WeakMap();
 
-  console.log('Plugin Init'); // Plugin interface
+var _onPluginClick = /*#__PURE__*/new WeakSet();
 
-  return {
-    // Public attributes
-    get options() {
-      return pluginOptions;
-    },
+var PluginNameClass = /*#__PURE__*/function () {
+  function PluginNameClass($rootElement, pluginOptions) {
+    _classCallCheck(this, PluginNameClass);
 
-    // Public method for destroying a plugin
-    destroy: function destroy() {
-      if (Utils.isFunction(pluginOptions.destroy)) {
-        pluginOptions.destroy();
-      } // Delete created tags and events
+    _classPrivateMethodInitSpec(this, _onPluginClick);
 
+    _classPrivateFieldInitSpec(this, _$rootElement, {
+      writable: true,
+      value: void 0
+    });
 
-      return true;
+    _classPrivateFieldInitSpec(this, _options, {
+      writable: true,
+      value: void 0
+    });
+
+    console.log('Plugin constructor');
+
+    _classPrivateFieldSet(this, _$rootElement, $rootElement);
+
+    _classPrivateFieldSet(this, _options, pluginOptions);
+
+    console.log('Init Click');
+
+    _classPrivateFieldGet(this, _$rootElement).addEventListener('click', _classPrivateMethodGet(this, _onPluginClick, _onPluginClick2));
+  }
+
+  _createClass(PluginNameClass, [{
+    key: "options",
+    get: function get() {
+      return _classPrivateFieldGet(this, _options);
     }
-  };
+  }]);
+
+  return PluginNameClass;
+}();
+
+function _onPluginClick2(event) {
+  var $target = event.target;
+  console.log('Click ' + $target.innerText);
 }
 
-function PluginName(element, customOptions) {
+var CreatePluginNameClass = /*#__PURE__*/_createClass(function CreatePluginNameClass(element, customOptions) {
+  _classCallCheck(this, CreatePluginNameClass);
+
   var nodeList = [];
   var instances = [];
-  return function init() {
-    if (element && element instanceof HTMLElement) {
-      nodeList.push(element);
-    } else if (element && typeof element === 'string') {
-      var elementsList = document.querySelectorAll(element);
 
-      for (var i = 0, l = elementsList.length; i < l; i += 1) {
-        if (elementsList[i] instanceof HTMLElement) {
-          nodeList.push(elementsList[i]);
-        }
-      }
-    } else if (element && element.length) {
-      for (var _i = 0, _l = element.length; _i < _l; _i += 1) {
-        if (element[_i] instanceof HTMLElement) {
-          nodeList.push(element[_i]);
-        }
+  if (element && element instanceof HTMLElement) {
+    nodeList.push(element);
+  } else if (element && typeof element === 'string') {
+    var elementsList = document.querySelectorAll(element);
+
+    for (var i = 0, l = elementsList.length; i < l; i += 1) {
+      if (elementsList[i] instanceof HTMLElement) {
+        nodeList.push(elementsList[i]);
       }
     }
-
-    for (var _i2 = 0, _l2 = nodeList.length; _i2 < _l2; _i2 += 1) {
-      instances.push(new Plugin(nodeList[_i2], _objectSpread2(_objectSpread2(_objectSpread2({}, defaultOptions), customOptions), {}, {
-        name: 'PluginName'
-      })));
+  } else if (element && element.length) {
+    for (var _i = 0, _l = element.length; _i < _l; _i += 1) {
+      if (element[_i] instanceof HTMLElement) {
+        nodeList.push(element[_i]);
+      }
     }
+  }
 
-    return instances;
-  }();
-}
+  for (var _i2 = 0, _l2 = nodeList.length; _i2 < _l2; _i2 += 1) {
+    instances.push(new PluginNameClass(nodeList[_i2], _objectSpread2(_objectSpread2(_objectSpread2({}, defaultOptions), customOptions), {}, {
+      name: 'PluginName'
+    })));
+  }
 
-export { PluginName };
+  return instances;
+});
+
+export { CreatePluginNameClass };
 //# sourceMappingURL=index.js.map

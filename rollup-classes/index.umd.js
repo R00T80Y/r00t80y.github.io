@@ -244,5 +244,7 @@
   console.log(pluginInstances[0].options); // Call Destroy Method for first <h2>
   // pluginInstances[0].destroy();
 
+  window.pluginInstances = pluginInstances;
+
 }));
 //# sourceMappingURL=index.umd.js.map
