@@ -43,46 +43,51 @@
 </noscript>
 
 <div class="site">
-  <div class="site__main">
+  <header class="page-header-bar">
+    <div class="page-container">
+      <div class="page-header">
 
-    <header class="page-header-bar">
-      <div class="page-container">
-        <div class="page-header">
-
-          <div class="page-header__navigation">
-            <!-- Start: Burger -->
-            <div id="navigation" class="navigation">
-              <input type="checkbox" id="navigation__state-control" name="navigation__state-control" class="navigation__state-control" checked="false">
-              <script>document.getElementById('navigation__state-control').checked = false;</script>
-              <label class="navigation__button navigation__button--burger" role="button" aria-controls="navigation__panel" aria-expanded="false" aria-label="Открыть меню" for="navigation__state-control" tabindex="0">
+        <div class="page-header__navigation">
+          <!-- Start: Burger -->
+          <div id="navigation" class="navigation">
+            <input type="checkbox" id="navigation__state-control" name="navigation__state-control" class="navigation__state-control" checked="false">
+            <script>document.getElementById('navigation__state-control').checked = false;</script>
+            <label class="navigation__button navigation__button--burger" role="button" aria-controls="navigation__panel" aria-expanded="false" aria-label="Открыть меню" for="navigation__state-control" tabindex="0">
+              <span></span>
+            </label>
+            <nav id="navigation__panel" class="navigation__panel navigation__panel--left" data-visible="hidden">
+              <label class="navigation__button navigation__button--close" role="button" aria-controls="navigation__panel" aria-expanded="false" aria-label="Закрыть меню" for="navigation__state-control" tabindex="0">
                 <span></span>
               </label>
-              <nav id="navigation__panel" class="navigation__panel navigation__panel--left" data-visible="hidden">
-                <label class="navigation__button navigation__button--close" role="button" aria-controls="navigation__panel" aria-expanded="false" aria-label="Закрыть меню" for="navigation__state-control" tabindex="0">
-                  <span></span>
-                </label>
-                <ul class="navigation__list">
-                  <li class="navigation__item focus-visible"><a href="/" class="navigation__link">Главная</a></li>
-                  <li class="navigation__item focus-visible"><a href="/grid.html" class="navigation__link">Сетка</a></li>
-                  <li class="navigation__item focus-visible"><a href="/forms.html" class="navigation__link">Формы</a></li>
-                  <li class="navigation__item focus-visible"><a href="/debug.html" class="navigation__link">Отладка</a></li>
-                </ul>
-              </nav>
-            </div>
-            <!-- End: Burger -->
+              <ul class="navigation__list">
+                <li class="navigation__item focus-visible"><a class="navigation__link" href="/">Главная</a></li>
+                <li class="navigation__item focus-visible"><a class="navigation__link" href="/grid.html">Сетка</a></li>
+                <li class="navigation__item focus-visible"><a class="navigation__link" href="/forms.html">Формы</a></li>
+                <li class="navigation__item focus-visible"><a class="navigation__link" href="/debug.html">Отладка</a></li>
+
+                <li class="navigation__item focus-visible"><a class="navigation__link" href="/demo-blocks-flex.html">demo-blocks-flex</a></li>
+                <li class="navigation__item focus-visible"><a class="navigation__link" href="/demo-blocks-table.html">demo-blocks-table</a></li>
+                <li class="navigation__item focus-visible"><a class="navigation__link" href="/demo-image-picture.html">demo-image-picture</a></li>
+                <li class="navigation__item focus-visible"><a class="navigation__link" href="/demo-image-svg-sprite.html">demo-image-svg-sprite</a></li>
+                <li class="navigation__item focus-visible"><a class="navigation__link" href="/demo-image-svg.html">demo-image-svg</a></li>
+              </ul>
+            </nav>
           </div>
-
-          <div class="page-header__logo js-menu-inert">
-            <a class="logo" href="/">
-              <img alt="logo" loading="lazy" width="26" height="29" src="/images/sword.png">
-            </a>
-          </div>
-
-          <div class="page-header__search js-menu-inert">search</div>
-
+          <!-- End: Burger -->
         </div>
+
+        <div class="page-header__logo js-menu-inert">
+          <a class="logo" href="/">
+            <img alt="logo" loading="lazy" width="26" height="29" src="/images/sword.png">
+          </a>
+        </div>
+
+        <div class="page-header__search js-menu-inert">search</div>
+
       </div>
-    </header>
+    </div>
+  </header>
+  <div class="site__main">
 
     <main class="page-content js-menu-inert">
       <div class="page-container">
@@ -93,6 +98,8 @@
             How to Use Command Line Arguments in a Bash Script
           </h1>
 
+
+<div class="hide">
           <h2>Third article Как использовать аргументы</h2>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate dolorem nam eveniet <a href="#">pariatur esse</a>, dolorum hic quo, veritatis sit amet numquam, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
@@ -176,6 +183,7 @@
           <p>
             "Lorem ipsum, dolor sit amet consectetur adipisicing elit". Voluptate dolorem nam eveniet pariatur esse, dolorum hic quo, <a href="#">veritatis sit amet numquam</a>, expedita repellendus aperiam a. Voluptates quas soluta debitis voluptate.
           </p>
+</div>
         </section>
 
       </div>

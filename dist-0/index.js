@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[826],{697:function(e,n,u){var s=u(220);new s.default(777),(new s.default).add((function(){console.log("Resize")}))}},function(e){e(e.s=697)}]);

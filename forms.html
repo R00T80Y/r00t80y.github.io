@@ -94,36 +94,36 @@
           <a href="form.other.html">Select, checkbox, radio button</a>
         </p>
 
-        <form class="custom" action="#" enctype="multipart/form-data" method="get" autocomplete="off">
+        <form class="form-custom" action="#" enctype="multipart/form-data" method="get" autocomplete="off">
 
-          <p>
-            <label for="fname" class="require">Имя:</label>
+          <p class="form-custom__row field_input">
+            <label for="fname" class="form-custom__title require">Имя:</label>
             <br>
             <input type="text" id="fname" name="fname" value="John">
           </p>
 
-          <p>
-            <label for="lname" class="require">Фамилия:</label>
+          <p class="form-custom__row field_input">
+            <label for="lname" class="form-custom__title require">Фамилия:</label>
             <br>
             <input type="text" id="lname" name="lname" value="Doe">
           </p>
 
-          <p>
-            <label for="msg">Сообщение:</label>
+          <p class="form-custom__row field_input">
+            <label for="msg" class="form-custom__title">Сообщение:</label>
             <br>
             <textarea rows="7" id="msg" name="msg" ></textarea>
           </p>
 
-          <p>
-            <input type="submit" value="ОТПРАВИТЬ">
-            <input type="submit" disabled value="Отправить">
-            <input type="reset" value="Сбросить">
-            <button>Кнопка</button>
+          <p class="form-custom__row">
+            <input class="button" type="submit" value="ОТПРАВИТЬ">
+            <input class="button"type="submit" disabled value="Отправить">
+            <input class="button"type="reset" value="Сбросить">
+            <button class="button">Кнопка</button>
             <a class="button" tabindex="0">Кнопка ссылка</a>
             <a class="button disabled">Кнопка ссылка</a>
           </p>
 
-          <p class="hidden">
+          <p class="form-custom__row">
             <!-- Кнопка с svg иконкой для программ чтения -->
             <button>
               <svg viewBox="0 0 32 32" width="32px" height="32px"

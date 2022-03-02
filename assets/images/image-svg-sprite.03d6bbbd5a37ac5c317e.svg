@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" >
+  <defs>
+		<style>
+		.img { display: none }
+		.img:target { display: inline }
+		</style>
+	</defs>
+  <g id="ring-1" class="img" viewbox="0 0 1 1" fill="currentColor">
+    <circle r="45%" cx="50%" cy="50%" stroke-width="5" stroke="blue"></circle>
+  </g>
+  <g id="ring-2" class="img" viewbox="0 0 150 150" fill="currentColor" stroke="red">
+    <circle r="45%" cx="50%" cy="50%" stroke-width="5"></circle>
+  </g>
+</svg>
