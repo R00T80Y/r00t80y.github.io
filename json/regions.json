@@ -1,0 +1,435 @@
+{
+  "list": [
+    {
+      "id": 0,
+      "name": "Москва",
+      "slug": "moskva"
+    },
+    {
+      "id": 1,
+      "name": "Санкт-Петербург",
+      "slug": "sankt-peterburg"
+    },
+    {
+      "id": 2,
+      "name": "Московская область",
+      "slug": "moskovskaya-oblast"
+    },
+    {
+      "id": 3,
+      "name": "Ленинградская область",
+      "slug": "leningradskaya-oblast"
+    },
+    {
+      "id": 4,
+      "name": "Москва и Московская область",
+      "slug": "moskva-i-moskovskaya-oblast"
+    },
+    {
+      "id": 5,
+      "name": "Санкт-Петербург и Ленинградская область",
+      "slug": "sankt-peterburg-i-leningradskaya-oblast"
+    },
+    {
+      "id": 6,
+      "name": "Адыгея",
+      "slug": "adygeya"
+    },
+    {
+      "id": 7,
+      "name": "Алтайский край",
+      "slug": "altayskiy-kray"
+    },
+    {
+      "id": 8,
+      "name": "Амурская область",
+      "slug": "amurskaya-oblast"
+    },
+    {
+      "id": 9,
+      "name": "Архангельская область",
+      "slug": "arhangelskaya-oblast"
+    },
+    {
+      "id": 10,
+      "name": "Астраханская область",
+      "slug": "astrahanskaya-oblast"
+    },
+    {
+      "id": 11,
+      "name": "Башкортостан",
+      "slug": "bashkortostan"
+    },
+    {
+      "id": 12,
+      "name": "Белгородская область",
+      "slug": "belgorodskaya-oblast"
+    },
+    {
+      "id": 13,
+      "name": "Брянская область",
+      "slug": "bryanskaya-oblast"
+    },
+    {
+      "id": 14,
+      "name": "Бурятия",
+      "slug": "buryatiya"
+    },
+    {
+      "id": 15,
+      "name": "Владимирская область",
+      "slug": "vladimirskaya-oblast"
+    },
+    {
+      "id": 16,
+      "name": "Волгоградская область",
+      "slug": "volgogradskaya-oblast"
+    },
+    {
+      "id": 17,
+      "name": "Вологодская область",
+      "slug": "vologodskaya-oblast"
+    },
+    {
+      "id": 18,
+      "name": "Воронежская область",
+      "slug": "voronezhskaya-oblast"
+    },
+    {
+      "id": 19,
+      "name": "Дагестан",
+      "slug": "dagestan"
+    },
+    {
+      "id": 20,
+      "name": "Еврейская АО",
+      "slug": "evreyskaya-ao"
+    },
+    {
+      "id": 21,
+      "name": "Забайкальский край",
+      "slug": "zabaykalskiy-kray"
+    },
+    {
+      "id": 22,
+      "name": "Ивановская область",
+      "slug": "ivanovskaya-oblast"
+    },
+    {
+      "id": 23,
+      "name": "Ингушетия",
+      "slug": "ingushetiya"
+    },
+    {
+      "id": 24,
+      "name": "Иркутская область",
+      "slug": "irkutskaya-oblast"
+    },
+    {
+      "id": 25,
+      "name": "Кабардино-Балкария",
+      "slug": "kabardino-balkariya"
+    },
+    {
+      "id": 26,
+      "name": "Калининградская область",
+      "slug": "kaliningradskaya-oblast"
+    },
+    {
+      "id": 27,
+      "name": "Калмыкия",
+      "slug": "kalmykiya"
+    },
+    {
+      "id": 28,
+      "name": "Калужская область",
+      "slug": "kaluzhskaya-oblast"
+    },
+    {
+      "id": 29,
+      "name": "Камчатский край",
+      "slug": "kamchatskiy-kray"
+    },
+    {
+      "id": 30,
+      "name": "Карачаево-Черкесия",
+      "slug": "karachaevo-cherkesiya"
+    },
+    {
+      "id": 31,
+      "name": "Карелия",
+      "slug": "kareliya"
+    },
+    {
+      "id": 32,
+      "name": "Кемеровская область",
+      "slug": "kemerovskaya-oblast"
+    },
+    {
+      "id": 33,
+      "name": "Кировская область",
+      "slug": "kirovskaya-oblast"
+    },
+    {
+      "id": 34,
+      "name": "Коми",
+      "slug": "komi"
+    },
+    {
+      "id": 35,
+      "name": "Костромская область",
+      "slug": "kostromskaya-oblast"
+    },
+    {
+      "id": 36,
+      "name": "Краснодарский край",
+      "slug": "krasnodarskiy-kray"
+    },
+    {
+      "id": 37,
+      "name": "Красноярский край",
+      "slug": "krasnoyarskiy-kray"
+    },
+    {
+      "id": 38,
+      "name": "Крым",
+      "slug": "krym"
+    },
+    {
+      "id": 39,
+      "name": "Курганская область",
+      "slug": "kurganskaya-oblast"
+    },
+    {
+      "id": 40,
+      "name": "Курская область",
+      "slug": "kurskaya-oblast"
+    },
+    {
+      "id": 41,
+      "name": "Липецкая область",
+      "slug": "lipeckaya-oblast"
+    },
+    {
+      "id": 42,
+      "name": "Магаданская область",
+      "slug": "magadanskaya-oblast"
+    },
+    {
+      "id": 43,
+      "name": "Марий Эл",
+      "slug": "mariy-el"
+    },
+    {
+      "id": 44,
+      "name": "Мордовия",
+      "slug": "mordoviya"
+    },
+    {
+      "id": 45,
+      "name": "Мурманская область",
+      "slug": "murmanskaya-oblast"
+    },
+    {
+      "id": 46,
+      "name": "Ненецкий АО",
+      "slug": "neneckiy-ao"
+    },
+    {
+      "id": 47,
+      "name": "Нижегородская область",
+      "slug": "nizhegorodskaya-oblast"
+    },
+    {
+      "id": 48,
+      "name": "Новгородская область",
+      "slug": "novgorodskaya-oblast"
+    },
+    {
+      "id": 49,
+      "name": "Новосибирская область",
+      "slug": "novosibirskaya-oblast"
+    },
+    {
+      "id": 50,
+      "name": "Омская область",
+      "slug": "omskaya-oblast"
+    },
+    {
+      "id": 51,
+      "name": "Оренбургская область",
+      "slug": "orenburgskaya-oblast"
+    },
+    {
+      "id": 52,
+      "name": "Орловская область",
+      "slug": "orlovskaya-oblast"
+    },
+    {
+      "id": 53,
+      "name": "Пензенская область",
+      "slug": "penzenskaya-oblast"
+    },
+    {
+      "id": 54,
+      "name": "Пермский край",
+      "slug": "permskiy-kray"
+    },
+    {
+      "id": 55,
+      "name": "Приморский край",
+      "slug": "primorskiy-kray"
+    },
+    {
+      "id": 56,
+      "name": "Псковская область",
+      "slug": "pskovskaya-oblast"
+    },
+    {
+      "id": 57,
+      "name": "Республика Алтай",
+      "slug": "respublika-altay"
+    },
+    {
+      "id": 58,
+      "name": "Ростовская область",
+      "slug": "rostovskaya-oblast"
+    },
+    {
+      "id": 59,
+      "name": "Рязанская область",
+      "slug": "ryazanskaya-oblast"
+    },
+    {
+      "id": 60,
+      "name": "Самарская область",
+      "slug": "samarskaya-oblast"
+    },
+    {
+      "id": 61,
+      "name": "Саратовская область",
+      "slug": "saratovskaya-oblast"
+    },
+    {
+      "id": 62,
+      "name": "Саха (Якутия)",
+      "slug": "saha-yakutiya"
+    },
+    {
+      "id": 63,
+      "name": "Сахалинская область",
+      "slug": "sahalinskaya-oblast"
+    },
+    {
+      "id": 64,
+      "name": "Свердловская область",
+      "slug": "sverdlovskaya-oblast"
+    },
+    {
+      "id": 65,
+      "name": "Северная Осетия",
+      "slug": "severnaya-osetiya"
+    },
+    {
+      "id": 66,
+      "name": "Смоленская область",
+      "slug": "smolenskaya-oblast"
+    },
+    {
+      "id": 67,
+      "name": "Ставропольский край",
+      "slug": "stavropolskiy-kray"
+    },
+    {
+      "id": 68,
+      "name": "Тамбовская область",
+      "slug": "tambovskaya-oblast"
+    },
+    {
+      "id": 69,
+      "name": "Татарстан",
+      "slug": "tatarstan"
+    },
+    {
+      "id": 70,
+      "name": "Тверская область",
+      "slug": "tverskaya-oblast"
+    },
+    {
+      "id": 71,
+      "name": "Томская область",
+      "slug": "tomskaya-oblast"
+    },
+    {
+      "id": 72,
+      "name": "Тульская область",
+      "slug": "tulskaya-oblast"
+    },
+    {
+      "id": 73,
+      "name": "Тыва",
+      "slug": "tyva"
+    },
+    {
+      "id": 74,
+      "name": "Тюменская область",
+      "slug": "tyumenskaya-oblast"
+    },
+    {
+      "id": 75,
+      "name": "Удмуртия",
+      "slug": "udmurtiya"
+    },
+    {
+      "id": 76,
+      "name": "Ульяновская область",
+      "slug": "ulyanovskaya-oblast"
+    },
+    {
+      "id": 77,
+      "name": "Хабаровский край",
+      "slug": "habarovskiy-kray"
+    },
+    {
+      "id": 78,
+      "name": "Хакасия",
+      "slug": "hakasiya"
+    },
+    {
+      "id": 79,
+      "name": "Ханты-Мансийский АО",
+      "slug": "hanty-mansiyskiy-ao"
+    },
+    {
+      "id": 80,
+      "name": "Челябинская область",
+      "slug": "chelyabinskaya-oblast"
+    },
+    {
+      "id": 81,
+      "name": "Чеченская Республика",
+      "slug": "chechenskaya-respublika"
+    },
+    {
+      "id": 82,
+      "name": "Чувашия",
+      "slug": "chuvashiya"
+    },
+    {
+      "id": 83,
+      "name": "Чукотский АО",
+      "slug": "chukotskiy-ao"
+    },
+    {
+      "id": 84,
+      "name": "Ямало-Ненецкий АО",
+      "slug": "yamalo-neneckiy-ao"
+    },
+    {
+      "id": 85,
+      "name": "Ярославская область",
+      "slug": "yaroslavskaya-oblast"
+    }
+  ],
+  "total": 86
+}
