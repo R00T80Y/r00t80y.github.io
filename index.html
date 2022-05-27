@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title></title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- iOS (iPhone/iPod/iPad) автомотически ищет телефон и конвертирует его в ссылку -->
+  <meta name="format-detection" content="telephone=no">
+
+  <link href="/assets/css/normalize.min.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="/favicon.ico"><link href="/assets/css/vendor.css" rel="stylesheet"><link href="/assets/css/main.css" rel="stylesheet"></head><body class="no-js">
+<script>
+document.body.classList.remove('no-js');
+document.body.classList.add('js');
+document.body.classList.add('animation-init');
+</script>
+<div class="site">
+  <header class="page-header-bar">
+    <div class="container-main">
+      <div class="page-header">
+
+        <div class="page-header__logo js-menu-inert">
+          <div class="logo js-logo">
+            <a href="#">
+              <img class="logo__img" alt="Estate logo" loading="lazy" width="127" height="37" src="/images/estate-logo.svg">
+            </a>
+          </div>
+        </div>
+
+        <div class="page-header__navigation">
+
+          <!-- Start: Primary Navigation -->
+          <div id="navigation" class="navigation">
+            <input type="checkbox" id="navigation__state-control" name="navigation__state-control" class="navigation__state-control" checked="false" style="display:none">
+            <!-- Sometimes the browser caches the state of the checkbox -->
+            <script>document.getElementById('navigation__state-control').checked = false;</script>
+            <!-- Burger Icon -->
+            <label class="navigation__button navigation__button--burger" role="button" aria-controls="navigation__panel" aria-expanded="false" aria-label="Открыть меню" for="navigation__state-control" tabindex="0">
+              <span></span>
+            </label>
+
+              <nav id="navigation__panel" class="navigation__panel navigation__panel--right" data-visible="hidden">
+                <div class="navigation__panel-top">
+                  <!-- Close Icon -->
+                  <label class="navigation__button navigation__button--close" role="button" aria-controls="navigation__panel" aria-expanded="false" aria-label="Закрыть меню" for="navigation__state-control" tabindex="0">
+                    <span></span>
+                  </label>
+                </div>
+                <!-- Menu -->
+                <ul class="navigation__list">
+                  <li class="navigation__item focus-visible"><a class="navigation__link" href="#">Аренда</a></li>
+                  <li class="navigation__item focus-visible"><a class="navigation__link" href="#">Покупка</a></li>
+                  <li class="navigation__item focus-visible"><a class="navigation__link" href="#">Наша команда</a></li>
+                  <li class="navigation__item focus-visible"><a class="navigation__link" href="#">Контакты</a></li>
+                </ul>
+              </nav>
+          </div>
+          <!-- End: Primary Navigation -->
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="js-menu-inert">
+
+    <!-- <div style="width: 100%; height: 78px; background: transparent;"></div> -->
+
+    <div class="overflow">
+      <section class="section-hero section-container" style="background-image: url(/images/foto/hero.jpg)">
+        <div class="container-main section-hero__container">
+          <div class="section-hero__top">
+            <div class="section-hero__image">
+              <img alt="Estate" src="/images/hero-estate-logo.svg" />
+            </div>
+            <div class="section-hero__title hide-br-md-down">Мы готовы помочь вам<br /> найти новый дом</div>
+          </div>
+          <!-- <div class="section-hero__bottom">
+            <div class="section-hero__link">
+              <a class="button-arrow button-arrow--big" href="#"></a>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </div>
+
+<div class="manager manager">
+  <div class="manager__picture">
+    <img class="manager__image" alt="Ava Orn"
+      src="/images/avatar/avatar-1@2x.jpg"
+      srcset="/images/avatar/avatar-1@2x.jpg 2x"/>
+  </div>
+  <div class="manager__content">
+    <a href="#" class="manager__name manager__name--em">Ava Orn</a>
+    <span class="manager__profession">Главный брокер</span>
+    <div class="manager__description manager__description--em">
+      <p>Наша цель - предоставить наиболее простую и эффективную форму</p>
+    </div>
+  </div>
+</div>
+
+<div class="manager manager">
+  <div class="manager__picture">
+    <img class="manager__image" alt="Ava Orn"
+      src="/images/avatar/avatar-1@2x.jpg"
+      srcset="/images/avatar/avatar-1@2x.jpg 2x"/>
+  </div>
+  <div class="manager__content">
+    <a href="#" class="manager__name manager__name--rem">Ava Orn</a>
+    <span class="manager__profession">Главный брокер</span>
+    <div class="manager__description manager__description--rem">
+      <p>Наша цель - предоставить наиболее простую и эффективную форму</p>
+    </div>
+  </div>
+</div>
+<div class="clearfix">
+  <div class="box-text box-text--px">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloremque possimus sequi molestiae velit, reprehenderit perspiciatis aspernatur vero adipisci ad.
+  </div>
+  <div class="box-text box-text--rem">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloremque possimus sequi molestiae velit, reprehenderit perspiciatis aspernatur vero adipisci ad.
+  </div>
+  <div class="box-text box-text--em">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloremque possimus sequi molestiae velit, reprehenderit perspiciatis aspernatur vero adipisci ad.
+  </div>
+  <div class="box-text box-text--percent">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloremque possimus sequi molestiae velit, reprehenderit perspiciatis aspernatur vero adipisci ad.
+  </div>
+</div>
+
+<div class="clearfix">
+  <div class="box-size box-size--px">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloremque possimus sequi molestiae velit, reprehenderit perspiciatis aspernatur vero adipisci ad.
+  </div>
+  <div class="box-size box-size--rem">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloremque possimus sequi molestiae velit, reprehenderit perspiciatis aspernatur vero adipisci ad.
+  </div>
+  <div class="box-size box-size--em">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloremque possimus sequi molestiae velit, reprehenderit perspiciatis aspernatur vero adipisci ad.
+  </div>
+  <div class="box-size box-size--percent">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloremque possimus sequi molestiae velit, reprehenderit perspiciatis aspernatur vero adipisci ad.
+  </div>
+</div>
+
+
+    <section class="section-container section-container--bg-grey">
+      <div class="container-main">
+        <div class="grid">
+          <div class="row row--center">
+            <div class="col-lg-6 mt-0">
+              <div class="section-container__subtitle text-accent">Наша цель</div>
+              <div class="section-container__title">
+                <h1>Мы стремимся найти дом, который вам понравится</h1>
+              </div>
+            </div>
+            <div class="col-lg-6 mt-0">
+              <p>Наша цель - предоставить наиболее простую и эффективную форму поиска престижной недвижимости во всем мире, опираясь на независимых профессоналов рынка недвижимости.</p>
+              <p>Откроем Вам двери самых <a href="#">чарующих домов мира</a>: Элитные виллы, престижные поместья, старинные резиденции, замки, уникальные пентхаусы и жилые сельские дома. Откройте для себя, что красота - это не роскошь. Это необходимость.</p>
+
+              <a href="#"  class="manager">
+                <span class="manager__picture">
+                  <img class="manager__image" alt="Ava Orn"
+                    src="/images/avatar/avatar-1.jpg"
+                    srcset="/images/avatar/avatar-1@2x.jpg 2x"/>
+                </span>
+                <span class="manager__content">
+                  <span class="manager__name">Ava Orn</span>
+                  <span class="manager__profession">Главный брокер</span>
+                </span>
+              </a>
+
+              <div class="manager manager--small">
+                <div class="manager__picture">
+                  <img class="manager__image" alt="Ava Orn"
+                    src="/images/avatar/avatar-1@2x.jpg"
+                    srcset="/images/avatar/avatar-1@2x.jpg 2x"/>
+                </div>
+                <div class="manager__content">
+                  <a href="#" class="manager__name">Ava Orn</a>
+                  <span class="manager__profession">Главный брокер</span>
+                  <div class="manager__description">
+                    <p>Наша цель - предоставить наиболее простую и эффективную форму</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section-choice section-container">
+      <div class="container-main section-choice__container">
+        <div class="section-container__subtitle text-accent text-center-md-up">Наши требования</div>
+        <div class="section-container__title text-center-md-up">
+          <h2>Как мы выбираем наши объявления</h2>
+        </div>
+        <div class="section-choice__content text-center-md-up">
+          <p>Более 50 000 престижных агентств недвижимости, которые размещают на сайте свои объекты. Откроем Вам двери самых чарующих домов мира: Элитные виллы, престижные поместья.</p>
+        </div>
+        <div class="section-choice__slider choice-slider">
+          <div class="swiper choice-slider__slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide choice-slide"
+                data-slide-icon="/images/icons/location.svg"
+                data-slide-title="Звездные места"
+                data-slide-body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                >
+                <div class="choice-slide__image">
+                  <img srcset="/images/foto/4@2x.jpg 2x"
+                    src="/images/foto/4@1x.jpg" />
+                </div>
+                <div class="choice-slide__content">
+                  <div class="choice-slide__content-wrap">
+                    <span class="choice-slide__title">
+                      Звездные места
+                    </span>
+                    <span class="choice-slide__body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide choice-slide"
+                data-slide-icon="/images/icons/builds.svg"
+                data-slide-title="Высококачественные конструкции"
+                data-slide-body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                >
+                <div class="choice-slide__image">
+                  <img srcset="/images/foto/3@2x.jpg 2x"
+                    src="/images/foto/3@1x.jpg" />
+                </div>
+                <div class="choice-slide__content">
+                  <div class="choice-slide__content-wrap">
+                    <span class="choice-slide__title">
+                      Высококачественные конструкции
+                    </span>
+                    <span class="choice-slide__body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide choice-slide"
+                data-slide-icon="/images/icons/interior.svg"
+                data-slide-title="Экспертный дизайн интерьера"
+                data-slide-body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+                >
+                <div class="choice-slide__image">
+                  <img srcset="/images/foto/5@2x.jpg 2x"
+                    src="/images/foto/5@1x.jpg" />
+                </div>
+                <div class="choice-slide__content">
+                  <div class="choice-slide__content-wrap">
+                    <span class="choice-slide__title">
+                      Экспертный дизайн интерьера
+                    </span>
+                    <span class="choice-slide__body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="choice-slider__navigation">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div> -->
+          </div>
+          <div class="swiper-pagination choice-slider__pagination"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="hide section-foto section-container">
+      <img alt=""
+        src="/images/foto/slider-image.jpg"
+        srcset="/images/foto/slider-image@2x.jpg 2x"/>
+    </section>
+
+    <section class="hide section-listings section-container">
+      <div class="container-main">
+        <div class="section-listings__subtitle">Актуальные объявления</div>
+        <div class="section-listings__title">Что мы приготовили для вас.</div>
+        <div class="section-listings__body">
+          <p>Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula. Vestibulum sit amet urna turpis. Mauris euismod elit et nisi ultrices, ut faucibus orci tincidunt.</p>
+        </div>
+        <div class="section-listings__items">
+          <div class="catalog">
+            <div class="catalog__item">
+              <div class="catalog__image">
+                <img alt=""
+                  src="/images/catalog/1.jpg"
+                  srcset="/images/catalog/1@2x.jpg 2x"/>
+              </div>
+              <div class="catalog__type">House</div>
+              <div class="catalog__title">California St.</div>
+              <div class="catalog__options">
+                <div class="catalog__option">16 beds</div>
+                <div class="catalog__option">2 bathrooms</div>
+                <div class="catalog__option">11 rooms</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-listings__bottom">
+          <a href="#">Show all listings</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-people section-container section-container--bg-grey">
+      <div class="container-main section-people__container">
+        <div class="section-people__topline">
+          <div class="section-container__subtitle text-accent text-center-md-up">Наши люди</div>
+          <div class="section-container__title text-center-md-up">
+            <h2>Познакомьтесь с нашей командой талантливых агентов</h2>
+          </div>
+          <div class="text-center-md-up">
+            <p>Откройте для себя, что красота - это не роскошь. Это необходимость. Более 50 000 престижных агентств недвижимости, которые размещают на сайте свои объекты.</p>
+            <p><a href="#">Ознакомьтесь с нашей командой</a></p>
+          </div>
+        </div>
+        <div class="section-people__manager">
+          <div class="grid">
+            <div class="row">
+              <div class="col-md-6 col-lg-4">
+                <div class="manager">
+                  <div class="manager__picture">
+                    <img class="manager__image" alt="Ava Orn"
+                      src="/images/avatar/avatar-1.jpg"
+                      srcset="/images/avatar/avatar-1@2x.jpg 2x"/>
+                  </div>
+                  <div class="manager__content">
+                    <div class="manager__name">Ava Orn</div>
+                    <div class="manager__profession">Главный брокер</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="manager">
+                  <div class="manager__picture">
+                    <img class="manager__image" alt="Ella Hessel"
+                      src="/images/avatar/avatar-2.jpg"
+                      srcset="/images/avatar/avatar-2@2x.jpg 2x"/>
+                  </div>
+                  <div class="manager__content">
+                    <div class="manager__name">Ella Hessel</div>
+                    <div class="manager__profession">Агент</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="manager">
+                  <div class="manager__picture">
+                    <img class="manager__image" alt="Ella Hessel"
+                      src="/images/avatar/avatar-3.jpg"
+                      srcset="/images/avatar/avatar-3@2x.jpg 2x"/>
+                  </div>
+                  <div class="manager__content">
+                    <div class="manager__name">Daryl Gislason</div>
+                    <div class="manager__profession">Риэлтор</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="manager">
+                  <div class="manager__picture">
+                    <img class="manager__image" alt="Ella Hessel"
+                      src="/images/avatar/avatar-4.jpg"
+                      srcset="/images/avatar/avatar-4@2x.jpg 2x"/>
+                  </div>
+                  <div class="manager__content">
+                    <div class="manager__name">David Sporer</div>
+                    <div class="manager__profession">Агент</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="manager">
+                  <div class="manager__picture">
+                    <img class="manager__image" alt="Ella Hessel"
+                      src="/images/avatar/avatar-5.jpg"
+                      srcset="/images/avatar/avatar-5@2x.jpg 2x"/>
+                  </div>
+                  <div class="manager__content">
+                    <div class="manager__name">Trevor Torphy</div>
+                    <div class="manager__profession">Агент</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="manager">
+                  <div class="manager__picture">
+                    <img class="manager__image" alt="Ella Hessel"
+                      src="/images/avatar/avatar-6.jpg"
+                      srcset="/images/avatar/avatar-6@2x.jpg 2x"/>
+                  </div>
+                  <div class="manager__content">
+                    <div class="manager__name">Amanda Giovanni</div>
+                    <div class="manager__profession">Риэлтор</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="hide section-news section-container">
+      <div class="container-main">
+        <div class="section-news__subtitle">Новости</div>
+        <div class="section-news__title">Writing from Estate.</div>
+        <div class="section-news__body">
+          <div class="news-list">
+            <div class="news-list__item">
+              <img alt=""
+                src="/images/news/1.jpg"
+                srcset="/images/news/1@2x.jpg 2x"/>
+              <div class="news-list__category">Press release</div>
+              <div class="news-list__title">Market watch: are condos still a good investment?</div>
+              <div class="news-list__date">August 12, 2021</div>
+            </div>
+            <div class="news-list__item">
+              <img alt=""
+                src="/images/news/2.jpg"
+                srcset="/images/news/2@2x.jpg 2x"/>
+              <div class="news-list__category">Announcement</div>
+              <div class="news-list__title">The history of great design</div>
+              <div class="news-list__date">August 11, 2021</div>
+            </div>
+            <div class="news-list__item">
+              <img alt=""
+                src="/images/news/2.jpg"
+                srcset="/images/news/2@2x.jpg 2x"/>
+              <div class="news-list__category">Company news</div>
+              <div class="news-list__title">Designers who changed everything</div>
+              <div class="news-list__date">August 10, 2021</div>
+            </div>
+          </div>
+        </div>
+        <div class="links">
+          <a href="#">Newsroom</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="hide section-testimonials section-container">
+      <div class="container-main">
+        <div class="section-testimonials__subtitle">Testimonials</div>
+        <div class="section-testimonials__title">What our customers say.</div>
+        <div class="section-testimonials__body">
+          <!-- Slider -->
+          <div class="item">
+            <!-- Raiting -->
+            <div>We found the perfect home!</div>
+            <div>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+            </div>
+            <div>Nate Davidsson</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-testimonials section-container">
+      <div class="container-main section-testimonials__container">
+        <div class="section-testimonials__subtitle">
+          <span class="text-accent">Видели достаточно?</span>
+        </div>
+        <div class="section-testimonials__title">
+          <h2>Свяжитесь с нами сегодня</h2>
+        </div>
+        <div class="section-testimonials__body">
+          <p>На наших страницах вы найдете самую актуальную и достоверную информацию по всем вопросам, связанным с землей и тем, что на ней построено</p>
+        </div>
+        <button class="button button--secondary">Наши контакты</button>
+        <button class="button button--secondary">Посмотреть объявления</button>
+      </div>
+    </section>
+
+
+  </main>
+  <footer class="js-menu-inert">
+    <div class="page-footer">
+      <div class="container-main">
+
+        <div class="grid">
+          <div class="row">
+            <div class="col-sm-4 col-lg-2">
+              <nav class="nav-footer">
+                <div class="nav-footer__title">
+                  <span class="text-accent">Страницы</span>
+                </div>
+                <ul class="nav-footer__list">
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Аренда</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Продажа</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Юридическая информация</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Контакты</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-4 col-lg-2">
+              <nav class="nav-footer">
+                <div class="nav-footer__title">
+                  <span class="text-accent">Европа</span>
+                </div>
+                <ul class="nav-footer__list">
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Франция</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Бельгия</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Испания</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Германия</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Великобритания</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Нидерланды</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Кипр</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-4 col-lg-2">
+              <nav class="nav-footer">
+                <div class="nav-footer__title">
+                  <span class="text-accent">Северная Америка</span>
+                </div>
+                <ul class="nav-footer__list">
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Багамы</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">США</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Панама</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Пуэрто-Рико</a></li>
+                  <li class="nav-footer__item"><a class="nav-footer__link" href="#">Коста-Рика</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+              <div class="newsletter">
+                <div class="newsletter__title">
+                  <span class="text-accent">Рассылка новостей</span>
+                </div>
+                <p>Подпишитесь на нашу (нечастую) рассылку, в которой мы делимся новостями о предстоящих листингах и проектах.</p>
+                <form>
+                  <div class="field-search">
+                    <div class="field-search__input">
+                      <input type="text" placeholder="Электронная почта" />
+                    </div>
+                    <div class="field-search__button">
+                      <button class="button button--search">Подписаться</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid contact">
+          <div class="row">
+            <div class="col-sm-5 col-md-4 col-lg-3 contact__socials">
+              <div class="social-icons social-icons--end">
+                <a href="#">
+                  <img width="24" height="24" alt="" src="/images/social/linkedin.svg" />
+                </a>
+                <a href="#">
+                  <img width="24" height="24" alt="" src="/images/social/facebook.svg" />
+                </a>
+                <a href="#">
+                  <img width="24" height="24" alt="" src="/images/social/instagram.svg" />
+                </a>
+                <a href="#">
+                  <img width="24" height="21" alt="" src="/images/social/twitter.svg" />
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-7 col-md-8 col-lg-9 contact__copyright">
+              <div class="text-center-sm-down">
+                &copy; Эстейт, Общество с ограниченной ответственностью. Все права защищены.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<script defer src="/assets/js/vendor.bundle.js"></script><script defer src="/assets/js/main.bundle.js"></script></body></html>
